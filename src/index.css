@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+@layer base {
+  body { @apply bg-cream font-sans text-forest antialiased; }
+  :focus-visible { outline: 2px solid #8a5a2b; outline-offset: 3px; }
+  h1, h2 { font-weight: 600; letter-spacing: -0.025em; }
+  h3 { font-weight: 500; letter-spacing: -0.015em; }
+}
+@layer components {
+  .label { @apply text-sm font-medium text-brass; }
+  .btn { @apply inline-block rounded-full px-7 py-3.5 text-sm font-semibold transition-colors duration-300; }
+  .field { @apply mt-1.5 w-full border border-cream/25 bg-pine/60 px-3 py-3 text-cream outline-none transition-colors focus:border-gold; }
+  .lamp { fill: transparent; transition: fill .5s ease; }
+  .group:hover .lamp { fill: #f4c872; }
+}
+@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee { animation: marquee 38s linear infinite; }
+@media (prefers-reduced-motion: reduce) { .marquee { animation: none; } }
